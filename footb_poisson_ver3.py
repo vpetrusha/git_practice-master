@@ -39,14 +39,8 @@ def dice_roll():
     dice_roll_home = home_team_rating + home_team_form + ratio
     dice_roll_away = away_team_rating + away_team_form + ratio
 
-    dice_roll_home_list = []
-    dice_roll_away_list = []
-
-    for x in range(dice_roll_home):
-        dice_roll_home_list.append(random.randint(1, 6))
-
-    for x in range(dice_roll_away):
-        dice_roll_away_list.append(random.randint(1, 6))
+    dice_roll_home_list = [random.randint(1, 6) for x in range(dice_roll_home)]
+    dice_roll_away_list = [random.randint(1, 6) for x in range(dice_roll_away)]
 
     print(f"Dice roll results:{dice_roll_home_list} and {dice_roll_away_list}")
     print(f"The probable score is {dice_roll_home_list.count(6)} : {dice_roll_away_list.count(6)}")
